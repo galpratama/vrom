@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Booking;
+use App\Models\FAQ;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class BookingController extends Controller
+
+class FAQController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +43,10 @@ class BookingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Booking  $booking
+     * @param  \App\Models\FAQ  $fAQ
      * @return \Illuminate\Http\Response
      */
-    public function show(Booking $booking)
+    public function show(FAQ $fAQ)
     {
         //
     }
@@ -52,10 +54,10 @@ class BookingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Booking  $booking
+     * @param  \App\Models\FAQ  $fAQ
      * @return \Illuminate\Http\Response
      */
-    public function edit(Booking $booking)
+    public function edit(FAQ $fAQ)
     {
         //
     }
@@ -64,10 +66,10 @@ class BookingController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Booking  $booking
+     * @param  \App\Models\FAQ  $fAQ
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Booking $booking)
+    public function update(Request $request, FAQ $fAQ)
     {
         //
     }
@@ -75,10 +77,10 @@ class BookingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Booking  $booking
+     * @param  \App\Models\FAQ  $fAQ
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Booking $booking)
+    public function destroy(FAQ $fAQ)
     {
         //
     }
