@@ -5,7 +5,7 @@
       <a href="#" onclick="window.history.go(-1); return false;">
         ←
       </a>
-      {!! __('Item &raquo; Sunting &raquo; #') . $item->id !!}
+      {!! __('Item &raquo; Sunting &raquo; #') . $item->id . ' &middot; ' . $item->name !!}
     </h2>
   </x-slot>
 
@@ -44,6 +44,110 @@
                      id="grid-last-name" type="text" placeholder="Nama">
               <div class="mt-2 text-sm text-gray-500">
                 Nama item. Contoh: Item 1, Item 2, Item 3, dsb.
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap px-3 mt-4 mb-6 -mx-3">
+            <div class="w-full">
+              <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-last-name">
+                Merek*
+              </label>
+              <select class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                      name="brand_id" required>
+                <option value="{{ $item->brand->id }}"> Tidak Diubah ({{ $item->brand->name }})</option>
+                <option disabled>------</option>
+                @foreach ($brands as $brand)
+                  <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+                @endforeach
+              </select>
+              <div class="mt-2 text-sm text-gray-500">
+                Merek item. Contoh: Porsche. Wajib diisi.
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap px-3 mt-4 mb-6 -mx-3">
+            <div class="w-full">
+              <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-last-name">
+                Tipe*
+              </label>
+              <select class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                      name="type_id" required>
+                <option value="{{ $item->type->id }}"> Tidak Diubah ({{ $item->type->name }})</option>
+                <option disabled>------</option>
+                @foreach ($types as $type)
+                  <option value="{{ $type->id }}">{{ $type->name }}</option>
+                @endforeach
+              </select>
+              <div class="mt-2 text-sm text-gray-500">
+                Tipe item. Contoh: Sport Car. Wajib diisi.
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap px-3 mt-4 mb-6 -mx-3">
+            <div class="w-full">
+              <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-last-name">
+                Foto
+              </label>
+              <input value="{{ old('photos') }}" name="photos[]"
+                     class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                     id="grid-last-name" type="file" placeholder="Nama" multiple
+                     accept="image/png, image/jpeg, image/webp">
+              <div class="mt-2 text-sm text-gray-500">
+                Foto item. Lebih dari satu foto dapat diupload. Opsional
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap px-3 mt-4 mb-6 -mx-3">
+            <div class="w-full">
+              <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-last-name">
+                Fitur
+              </label>
+              <input value="{{ old('features') ?? $item->features }}" name="features"
+                     class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                     id="grid-last-name" type="text" placeholder="Nama">
+              <div class="mt-2 text-sm text-gray-500">
+                Fitur item. Contoh: Fitur 1, Fitur 2, Fitur 3, dsb. Dipisahkan dengan koma (,). Opsional
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3 px-3 mt-4 mb-6 -mx-3">
+            <div class="w-full">
+              <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-last-name">
+                Harga
+              </label>
+              <input value="{{ old('price') ?? $item->price }}" name="price"
+                     class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                     id="grid-last-name" type="number" placeholder="Harga">
+              <div class="mt-2 text-sm text-gray-500">
+                Harga item. Angka. Contoh: 1000000. Wajib diisi.
+              </div>
+            </div>
+            <div class="w-full">
+              <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-last-name">
+                Rating
+              </label>
+              <input value="{{ old('star') ?? $item->star }}" name="star"
+                     class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                     id="grid-last-name" type="number" placeholder="Rating" min="1" max="5"
+                     step=".01">
+              <div class="mt-2 text-sm text-gray-500">
+                Rating item. Angka. Contoh: 5. Opsional. Minimal 1, maksimal 5. Opsional
+              </div>
+            </div>
+            <div class="w-full">
+              <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-last-name">
+                Total Review
+              </label>
+              <input value="{{ old('review') ?? $item->review }}" name="review"
+                     class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                     id="grid-last-name" type="number" placeholder="Total Review">
+              <div class="mt-2 text-sm text-gray-500">
+                Total Review item. Angka. Opsional
               </div>
             </div>
           </div>

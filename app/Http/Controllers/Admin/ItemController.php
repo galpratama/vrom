@@ -23,7 +23,7 @@ class ItemController extends Controller
             $query = Item::with(['type', 'brand']);
 
             return DataTables::of($query)
-                ->editColumn('thumbnail', function ($item){
+                ->editColumn('thumbnail', function ($item) {
                     return '<img src="' . $item->thumbnail . '" alt="" class="w-20 mx-auto rounded-md">';
                 })
                 ->addColumn('action', function ($item) {
@@ -39,7 +39,7 @@ class ItemController extends Controller
                             ' . method_field('delete') . csrf_field() . '
                         </form>';
                 })
-                ->rawColumns(['action','thumbnail'])
+                ->rawColumns(['action', 'thumbnail'])
                 ->make();
         }
 
@@ -112,8 +112,15 @@ class ItemController extends Controller
      */
     public function edit(Item $item)
     {
+        $item->load('type', 'brand');
+
+        $brands = Brand::all();
+        $types = Type::all();
+
         return view('admin.item.edit', [
-            'item' => $item
+            'item' => $item,
+            'brands' => $brands,
+            'types' => $types
         ]);
     }
 
@@ -127,6 +134,23 @@ class ItemController extends Controller
     public function update(ItemRequest $request, Item $item)
     {
         $data = $request->all();
+
+        // If photos is not empty, then upload new photos
+        if ($request->hasFile('photos')) {
+            $photos = [];
+
+            foreach ($request->file('photos') as $photo) {
+                $photoPath = $photo->store('assets/item', 'public');
+
+                // Store as json
+                array_push($photos, $photoPath);
+            }
+
+            $data['photos'] = json_encode($photos);
+        } else {
+            // If photos is empty, then use old photos
+            $data['photos'] = $item->photos;
+        }
 
         $item->update($data);
 
