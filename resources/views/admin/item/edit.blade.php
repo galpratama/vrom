@@ -51,7 +51,7 @@
           <div class="flex flex-wrap px-3 mt-4 mb-6 -mx-3">
             <div class="w-full">
               <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-last-name">
-                Merek*
+                Brand*
               </label>
               <select class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                       name="brand_id" required>
@@ -62,7 +62,7 @@
                 @endforeach
               </select>
               <div class="mt-2 text-sm text-gray-500">
-                Merek item. Contoh: Porsche. Wajib diisi.
+                Brand item. Contoh: Porsche. Wajib diisi.
               </div>
             </div>
           </div>
@@ -70,7 +70,7 @@
           <div class="flex flex-wrap px-3 mt-4 mb-6 -mx-3">
             <div class="w-full">
               <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-last-name">
-                Tipe*
+                Type*
               </label>
               <select class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                       name="type_id" required>
@@ -81,7 +81,7 @@
                 @endforeach
               </select>
               <div class="mt-2 text-sm text-gray-500">
-                Tipe item. Contoh: Sport Car. Wajib diisi.
+                Type item. Contoh: Sport Car. Wajib diisi.
               </div>
             </div>
           </div>

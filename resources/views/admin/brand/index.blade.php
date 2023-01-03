@@ -2,7 +2,7 @@
   <x-slot name="title">Admin</x-slot>
   <x-slot name="header">
     <h2 class="text-xl font-semibold leading-tight text-gray-800">
-      {{ __('Item') }}
+      {{ __('Brand') }}
     </h2>
   </x-slot>
 
@@ -24,24 +24,12 @@
             name: 'id',
           },
           {
-            data: 'thumbnail',
-            name: 'thumbnail'
-          },
-          {
             data: 'name',
             name: 'name'
           },
           {
-            data: 'type.name',
-            name: 'type.name'
-          },
-          {
-            data: 'brand.name',
-            name: 'brand.name'
-          },
-          {
-            data: 'price',
-            name: 'price'
+            data: 'slug',
+            name: 'slug'
           },
           {
             data: 'action',
@@ -58,9 +46,9 @@
   <div class="py-12">
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div class="mb-10">
-        <a href="{{ route('admin.item.create') }}"
+        <a href="{{ route('admin.brand.create') }}"
            class="px-4 py-2 font-bold text-white bg-green-500 rounded shadow-lg hover:bg-green-700">
-          + Buat Item
+          + Buat Brand
         </a>
       </div>
       <div class="overflow-hidden shadow sm:rounded-md">
@@ -69,11 +57,8 @@
             <thead>
               <tr>
                 <th style="max-width: 1%">ID</th>
-                <th>Thumbnail</th>
                 <th>Nama</th>
-                <th>Type</th>
-                <th>Brand</th>
-                <th>Harga</th>
+                <th>Slug</th>
                 <th style="max-width: 1%">Aksi</th>
               </tr>
             </thead>
