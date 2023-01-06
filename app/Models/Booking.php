@@ -17,6 +17,7 @@ class Booking extends Model
         'address',
         'city',
         'zip',
+        'status',
         'payment_method',
         'payment_status',
         'payment_url',

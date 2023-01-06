@@ -29,7 +29,7 @@
             <a href="#!" class="nav-link-item">Maps</a>
           </div>
           <div class="flex flex-col w-full ml-auto lg:w-auto lg:gap-12 lg:items-center lg:flex-row">
-            <a href="sign-in.html" class="btn-secondary">
+            <a href="{{ route('login') }}" class="btn-secondary">
               Log In
             </a>
           </div>
