@@ -11,8 +11,9 @@
 
       <div class="flex items-center gap-5 lg:justify-between">
         <!-- Form Card -->
-        <form action="{{ route('front.checkout.store', $item->slug) }}" class="bg-white p-[30px] pb-10 rounded-3xl max-w-[490px] w-full" x-data="app"
-              method="POST" id="checkoutForm" x-cloak>
+        <form action="{{ route('front.checkout.store', $item->slug) }}"
+              class="bg-white p-[30px] pb-10 rounded-3xl max-w-[490px] w-full" x-data="app" method="POST"
+              id="checkoutForm" x-cloak>
           @csrf
           @method('post')
           <div class="grid grid-cols-2 items-center gap-y-6 gap-x-4 lg:gap-x-[30px]">
@@ -170,7 +171,7 @@
             <div class="col-span-2 mt-[26px]">
               <!-- Button Primary -->
               <div class="p-1 rounded-full bg-primary group">
-                <a href="#" class="btn-primary" id="checkoutButton">
+                <a href="#!" class="btn-primary" id="checkoutButton">
                   <p>
                     Continue
                   </p>

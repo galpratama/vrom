@@ -2,7 +2,7 @@
   <x-slot name="title">Admin</x-slot>
   <x-slot name="header">
     <h2 class="text-xl font-semibold leading-tight text-gray-800">
-      <a href="#" onclick="window.history.go(-1); return false;">
+      <a href="#!" onclick="window.history.go(-1); return false;">
         ←
       </a>
       {!! __('Brand &raquo; Buat') !!}

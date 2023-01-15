@@ -2,7 +2,7 @@
   <x-slot name="title">Admin</x-slot>
   <x-slot name="header">
     <h2 class="text-xl font-semibold leading-tight text-gray-800">
-      <a href="#" onclick="window.history.go(-1); return false;">
+      <a href="#!" onclick="window.history.go(-1); return false;">
         ←
       </a>
       {!! __('Item &raquo; Buat') !!}
@@ -99,7 +99,8 @@
               </label>
               <input value="{{ old('photos') }}" name="photos[]"
                      class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
-                     id="grid-last-name" type="file" placeholder="Nama" multiple accept="image/png, image/jpeg, image/webp">
+                     id="grid-last-name" type="file" placeholder="Nama" multiple
+                     accept="image/png, image/jpeg, image/webp">
               <div class="mt-2 text-sm text-gray-500">
                 Foto item. Lebih dari satu foto dapat diupload. Opsional
               </div>
@@ -124,7 +125,8 @@
               </label>
               <input value="{{ old('star') }}" name="star"
                      class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
-                     id="grid-last-name" type="number" placeholder="Rating" min="1" max="5" step=".01">
+                     id="grid-last-name" type="number" placeholder="Rating" min="1" max="5"
+                     step=".01">
               <div class="mt-2 text-sm text-gray-500">
                 Rating item. Angka. Contoh: 5. Opsional. Minimal 1, maksimal 5. Opsional
               </div>

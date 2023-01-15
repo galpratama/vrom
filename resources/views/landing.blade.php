@@ -59,7 +59,7 @@
         </div>
         <!-- Button Primary -->
         <div class="p-1 rounded-full bg-primary group" data-aos="zoom-in" data-aos-delay="3400">
-          <a href="./checkout.html" class="btn-primary">
+          <a href="#popularCars" class="btn-primary">
             <p class="transition-all duration-[320ms] translate-x-3 group-hover:-translate-x-1">
               Rent Now
             </p>
@@ -73,7 +73,7 @@
   </section>
 
   <!-- Popular Cars -->
-  <section class="bg-darkGrey">
+  <section class="bg-darkGrey" id="popularCars">
     <div class="container relative py-[100px]">
       <header class="mb-[30px]">
         <h2 class="font-bold text-dark text-[26px] mb-1">
@@ -314,7 +314,7 @@
         </header>
         <!-- Button Primary -->
         <div class="p-1 rounded-full bg-primary group w-max">
-          <a href="details.html" class="btn-primary">
+          <a href="#popularCars" class="btn-primary">
             <p class="transition-all duration-[320ms] translate-x-3 group-hover:-translate-x-1">
               Book Now
             </p>

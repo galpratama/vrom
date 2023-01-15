@@ -81,7 +81,7 @@
             <div class="col-span-2 mt-[26px]">
               <!-- Button Primary -->
               <div class="p-1 rounded-full bg-primary group">
-                <a href="#" class="btn-primary" id="registerButton">
+                <a href="#!" class="btn-primary" id="registerButton">
                   <p>
                     Create My Account
                   </p>
