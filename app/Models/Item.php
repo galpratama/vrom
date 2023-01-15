@@ -47,4 +47,9 @@ class Item extends Model
     {
         return $this->belongsTo(Brand::class);
     }
+
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
 }

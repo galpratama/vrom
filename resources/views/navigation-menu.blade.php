@@ -32,11 +32,6 @@
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('admin.faq.index') }}" :active="request()->routeIs('admin.faq.index')">
-                        {{ __('FAQ') }}
-                    </x-jet-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('admin.booking.index') }}" :active="request()->routeIs('admin.booking.index')">
                         {{ __('Booking') }}
                     </x-jet-nav-link>
@@ -173,9 +168,6 @@
             </x-jet-responsive-nav-link>
             <x-jet-responsive-nav-link href="{{ route('admin.item.index') }}" :active="request()->routeIs('admin.item.index')">
                 {{ __('Type') }}
-            </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('admin.faq.index') }}" :active="request()->routeIs('admin.faq.index')">
-                {{ __('FAQ') }}
             </x-jet-responsive-nav-link>
         </div>
 
