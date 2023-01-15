@@ -10,7 +10,9 @@
         </li>
         <li
             class="text-secondary font-normal text-base capitalize after:content-['/'] last:after:content-none inline-flex gap-5">
-          <a href="#!">Porsche</a>
+          <a href="#!">
+            {{ $item->brand->name }}
+          </a>
         </li>
         <li
             class="text-dark font-semibold text-base capitalize after:content-['/'] last:after:content-none inline-flex gap-5">
