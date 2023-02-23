@@ -24,10 +24,10 @@ class MidtransCallbackController extends Controller
         $status = $notification->transaction_status;
         $type = $notification->payment_type;
         $fraud = $notification->fraud_status;
-        $order_id = $notification->order_id;
+        $orderId = $notification->order_id;
 
         // Cari transaksi berdasarkan ID
-        $booking = Booking::findOrFail($order_id);
+        $booking = Booking::findOrFail(explode($orderId, '-')[1]);
 
         // Handle notification status midtrans
         if ($status == 'capture') {
@@ -38,15 +38,15 @@ class MidtransCallbackController extends Controller
                     $booking->payment_status = 'success';
                 }
             }
-        } else if ($status == 'settlement') {
+        } elseif ($status == 'settlement') {
             $booking->payment_status = 'success';
-        } else if ($status == 'pending') {
+        } elseif ($status == 'pending') {
             $booking->payment_status = 'pending';
-        } else if ($status == 'deny') {
+        } elseif ($status == 'deny') {
             $booking->payment_status = 'cancelled';
-        } else if ($status == 'expire') {
+        } elseif ($status == 'expire') {
             $booking->payment_status = 'cancelled';
-        } else if ($status == 'cancel') {
+        } elseif ($status == 'cancel') {
             $booking->payment_status = 'cancelled';
         }
 

@@ -118,7 +118,7 @@
             </div>
           </div>
         </form>
-        <img src="/images/porsche_small.webp" class="max-w-[50%] hidden lg:block -mr-[100px]" alt="">
+        <img src="/images/porsche_small.webp" class="max-w-[50%] hidden lg:block -mr-[200px]" alt="">
       </div>
     </div>
   </section>

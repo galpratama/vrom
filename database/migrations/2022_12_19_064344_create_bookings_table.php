@@ -28,6 +28,9 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->string('zip')->nullable();
 
+            // status
+            $table->string('status')->default('pending');
+
             // payment
             $table->string('payment_method')->default('midtrans');
             $table->string('payment_status')->default('pending');

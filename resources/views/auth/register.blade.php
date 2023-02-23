@@ -11,7 +11,7 @@
         </header>
         <!-- Form Card -->
         <form action="{{ route('register') }}" class="bg-white p-[30px] pb-10 rounded-3xl max-w-[490px] w-full"
-              id="registerForm" method="POST">
+              id="registerForm" method="POST" enctype="multipart/form-data">
           @csrf
           <!-- Validation Errors -->
           <div class="flex flex-col col-span-2 gap-3">
@@ -31,7 +31,7 @@
                      class="w-[36px] h-[36px] rounded-full absolute right-[-7px] bottom-[9px]" alt="">
               </a>
             </div>
-            <input type="file" name="photo" id="photo" class="hidden" value=""
+            <input type="file" name="photo" id="photo" class="hidden"
                    accept="image/x-png,image/jpg,image/jpeg">
           </div>
           <div class="grid grid-cols-2 items-center gap-y-6 gap-x-4 lg:gap-x-[30px]">

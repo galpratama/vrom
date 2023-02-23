@@ -29,11 +29,14 @@ Route::name('front.')->group(function () {
     Route::get('/detail/{slug}', [DetailController::class, 'index'])->name('detail');
     Route::get('/payment/success', [PaymentController::class, 'success'])->name('payment.success');
 
+
     Route::group(['middleware' => 'auth'], function () {
         Route::get('/checkout/{slug}', [CheckoutController::class, 'index'])->name('checkout');
         Route::post('/checkout/{slug}', [CheckoutController::class, 'store'])->name('checkout.store');
         Route::get('/payment/{bookingId}', [PaymentController::class, 'index'])->name('payment');
         Route::post('/payment/{bookingId}', [PaymentController::class, 'update'])->name('payment.update');
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/dashboard/booking', [DashboardController::class, 'booking'])->name('dashboard.booking');
     });
 });
 

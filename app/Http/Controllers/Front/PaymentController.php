@@ -4,15 +4,25 @@ namespace App\Http\Controllers\Front;
 
 use App\Models\Booking;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 
 class PaymentController extends Controller
 {
     public function index(Request $request, $bookingId)
     {
-        $booking = Booking::with(['item.brand','item.type'])->findOrFail($bookingId);
+        $booking = Booking::with(['item.brand', 'item.type'])->findOrFail($bookingId);
 
         return view('payment', [
+            'booking' => $booking
+        ]);
+    }
+
+    public function detail(Request $request, $bookingId)
+    {
+        $booking = Booking::with(['item.brand', 'item.type'])->findOrFail($bookingId);
+
+        return view('payment-detail', [
             'booking' => $booking
         ]);
     }
@@ -38,19 +48,21 @@ class PaymentController extends Controller
             // Convert to IDR
             $totalPrice = $booking->total_price * $rate;
 
-            // Create array for send to API
+            // Create Midtrans Params
             $midtransParams = [
                 'transaction_details' => [
                     'order_id' => $booking->id,
                     'gross_amount' => (int) $totalPrice,
                 ],
                 'customer_details' => [
-                    'first_name' => $booking->name,
-                    'email' => $booking->user->email,
+                    'first_name' => $booking->customer_name,
+                    'email' => $booking->customer_email,
                 ],
                 'enabled_payments' => ['gopay', 'bank_transfer'],
                 'vtweb' => []
             ];
+
+
 
             // Get Snap Payment Page URL
             $paymentUrl = \Midtrans\Snap::createTransaction($midtransParams)->redirect_url;
@@ -61,7 +73,7 @@ class PaymentController extends Controller
 
             // Redirect to Snap Payment Page
             return redirect($paymentUrl);
-        } 
+        }
 
         return redirect()->route('front.index');
     }

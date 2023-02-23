@@ -1,9 +1,9 @@
 <x-front-layout>
   <!-- Main Content -->
   <section class="bg-darkGrey relative py-[70px] min-h-[calc(100vh-70px)] lg:min-h-[calc(100vh-135px)]">
-    <div class="container">
+    <div class="overflow-hidden">
       <div class="flex items-center justify-center gap-5 lg:justify-between">
-        <div class="flex flex-col items-center md:ml-12">
+        <div class="flex flex-col items-center md:ml-48">
           <header class="mb-[30px] text-center">
             <h2 class="font-bold text-dark text-[26px] mb-1">
               Success Booking
